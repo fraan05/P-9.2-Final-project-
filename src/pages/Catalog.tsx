@@ -4,6 +4,7 @@ import { Search, ExternalLink, Star } from 'lucide-react';
 import { carService } from '../services/api';
 import type { Car } from '../types';
 import { CarModal } from '../components/CarModal';
+import { DefaultImage } from '../assets/images';
 
 
 const Catalog = () => {
@@ -105,8 +106,9 @@ const Catalog = () => {
                                     <span className="bg-white text-primary px-6 py-3 rounded-full font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500 shadow-2xl">Ver Detalles</span>
                                 </div>
                                 <img
-                                    src={car.image}
+                                    src={car.image || DefaultImage}
                                     alt={`${car.brand} ${car.model}`}
+                                    onError={(e) => { (e.target as HTMLImageElement).src = DefaultImage; }}
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                                 />
                                 <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md px-5 py-2.5 rounded-2xl font-black text-sm shadow-xl z-20 italic">

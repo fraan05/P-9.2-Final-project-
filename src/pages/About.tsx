@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Award, Briefcase, Heart } from 'lucide-react';
+import { ProfilePhoto2 } from '../assets/images';
 
 const About = () => {
     return (
@@ -26,7 +27,7 @@ const About = () => {
                 >
                     <div className="absolute inset-0 bg-secondary/10 rounded-[4rem] rotate-3 -z-10 group-hover:rotate-6 transition-transform duration-700"></div>
                     <img
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200"
+                        src={ProfilePhoto2}
                         alt="Founder"
                         className="rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] w-full h-auto transform group-hover:-rotate-3 transition-transform duration-1000"
                     />
