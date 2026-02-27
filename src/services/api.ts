@@ -117,7 +117,6 @@ const MOCK_CARS: Car[] = [
 
 export const carService = {
     getCars: async (): Promise<Car[]> => {
-        // Simulate API delay
         return new Promise((resolve) => {
             setTimeout(() => resolve(MOCK_CARS), 800);
         });

@@ -146,6 +146,7 @@ export const CarModal = ({ car, onClose }: CarModalProps) => {
                                 )}
                             </div>
 
+
                             <form onSubmit={handleSubmitReview} className="mt-auto bg-white p-8 rounded-[3rem] border border-border/40 shadow-2xl flex flex-col gap-6">
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <div className="relative flex-1">

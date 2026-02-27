@@ -1,44 +1,158 @@
-body {
-  font-family: sans-serif;
-  color: #0f172a;
-  background-color: white;
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #0f172a;
+  --color-primary-foreground: #f8fafc;
+  --color-secondary: #3b82f6;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #f59e0b;
+  --color-surface: #f8fafc;
+  --color-surface-dark: #1e293b;
+  --color-border: #e2e8f0;
+  --color-border-dark: #334155;
+
+
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Outfit", sans-serif;
+
+
+  --background-image-gradient-premium: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+
+
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-slide-up: slideUp 0.5s ease-out forwards;
+
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }
 
-.nav-button {
-  background-color: #3b82f6;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
+
+@layer base {
+  * {
+    @apply border-border;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none;
+  }
+
+
+  body {
+    @apply bg-white text-primary font-body antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+  h1 {
+    @apply text-5xl md:text-8xl leading-[1.05] tracking-tighter;
+  }
+
+
+  h2 {
+    @apply text-4xl md:text-7xl leading-[1.1] tracking-tight;
+  }
+
+
+  h3 {
+    @apply text-3xl md:text-5xl leading-[1.2] tracking-normal;
+  }
+
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-black italic uppercase;
+    word-break: keep-all;
+    /* Added subtle padding for italicized text clipping */
+    @apply pr-4;
+  }
+
+
+  input,
+  textarea,
+  select {
+    @apply bg-surface text-primary border-border/50;
+
+
+    /* Ensure no white text on white bg */
+    &::placeholder {
+      @apply text-primary/30;
+    }
+  }
 }
 
-.secondary-button {
-  border: 1px solid #e2e8f0;
-  padding: 10px 20px;
-  background: transparent;
+
+@layer components {
+  .glass-morphism {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+
+
+  .gradient-text {
+    @apply bg-gradient-premium bg-clip-text text-transparent;
+    /* Ensure the gradient box doesn't clip the glyphs */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding-right: 0.1em;
+    margin-right: -0.1em;
+  }
+
+
+  .btn-primary {
+    @apply bg-secondary text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-lg shadow-secondary/20;
+  }
+
+
+  .btn-outline {
+    @apply border border-border px-8 py-4 rounded-full font-bold hover:bg-surface transition-colors;
+  }
 }
 
-.fade-in-text {
-  animation: fadeIn 0.5s;
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary/10 rounded-full hover:bg-secondary/30 transition-colors;
+  }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-h1, h2, h3 {
-  text-transform: uppercase;
-  font-style: italic;
-  font-weight: 900;
-}
-
-h1 { font-size: 50px; }
-h2 { font-size: 40px; }
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(15, 23, 42, 0.1);
+.perspective-1000 {
+  perspective: 1000px;
 }

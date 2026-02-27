@@ -6,6 +6,7 @@ import Catalog from './pages/Catalog';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
+
 function App() {
   return (
     <Router>
@@ -20,5 +21,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
