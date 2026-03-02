@@ -4,6 +4,7 @@ import { Search, ExternalLink, Star } from 'lucide-react';
 import { carService } from '../services/api';
 import type { Car } from '../types';
 import { CarModal } from '../components/CarModal';
+import { Button } from '../components/Button';
 import { DefaultImage } from '../assets/images';
 
 
@@ -103,7 +104,12 @@ const Catalog = () => {
                         >
                             <div className="relative h-80 overflow-hidden cursor-pointer" onClick={() => setSelectedCar(car)}>
                                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 flex items-center justify-center">
-                                    <span className="bg-white text-primary px-6 py-3 rounded-full font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500 shadow-2xl">Ver Detalles</span>
+                                    <Button
+                                        variant="primary"
+                                        className="rounded-full font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500 shadow-2xl bg-white text-primary hover:bg-white/90"
+                                    >
+                                        Ver Detalles
+                                    </Button>
                                 </div>
                                 <img
                                     src={car.image || DefaultImage}
@@ -148,19 +154,21 @@ const Catalog = () => {
 
 
                                 <div className="flex gap-4 pt-4">
-                                    <button
+                                    <Button
                                         onClick={() => setSelectedCar(car)}
-                                        className="flex-1 btn-primary flex items-center justify-center gap-2 group/btn"
+                                        variant="primary"
+                                        icon={Star}
+                                        className="flex-1"
                                     >
-                                        Explorar <Star size={18} className="group-hover:rotate-12 transition-transform" />
-                                    </button>
-                                    <button
+                                        Explorar
+                                    </Button>
+                                    <Button
                                         onClick={() => handleGoogleSearch(car)}
-                                        className="p-4 border border-border/50 rounded-2xl hover:bg-white hover:text-secondary hover:shadow-xl transition-all duration-300"
+                                        variant="outline"
+                                        icon={ExternalLink}
+                                        className="px-4"
                                         title="Buscar ofertas en Google"
-                                    >
-                                        <ExternalLink size={22} />
-                                    </button>
+                                    />
                                 </div>
                             </div>
                         </motion.div>

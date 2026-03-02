@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MapPin, Phone, Mail } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
+import { Button } from '../components/Button';
 
 const Contact = () => {
     const [sent, setSent] = useState(false);
@@ -72,7 +73,14 @@ const Contact = () => {
                             className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
                         />
                         <div className="absolute inset-0 flex items-center justify-center bg-primary/20 backdrop-blur-[2px] group-hover:backdrop-blur-none transition-all duration-700">
-                            <span className="bg-white text-primary px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm shadow-2xl italic group-hover:scale-110 transition-transform">Ver en Mapas Interactivos</span>
+                            <Button
+                                variant="primary"
+                                size="lg"
+                                icon={ExternalLink}
+                                className="bg-white text-primary hover:bg-white/90 shadow-2xl italic group-hover:scale-110 transition-transform"
+                            >
+                                Ver en Mapas Interactivos
+                            </Button>
                         </div>
                     </div>
                 </motion.div>
@@ -113,12 +121,16 @@ const Contact = () => {
                                 placeholder="Comparte tus deseos con nosotros..."
                             />
                         </div>
-                        <button
-                            className={`py-8 rounded-full font-black text-2xl flex items-center justify-center gap-5 mt-6 transition-all duration-700 uppercase tracking-[0.2em] italic transform ${sent ? 'bg-emerald-500 scale-95 opacity-50' : 'bg-secondary hover:bg-white hover:text-primary hover:scale-105 active:scale-95 shadow-3xl shadow-secondary/40'}`}
+                        <Button
+                            type="submit"
                             disabled={sent}
+                            variant={sent ? 'ghost' : 'secondary'}
+                            size="lg"
+                            icon={sent ? undefined : Send}
+                            className={`py-8 rounded-full text-2xl mt-6 transition-all duration-700 tracking-[0.2em] transform ${sent ? 'bg-emerald-500 text-white scale-95 opacity-50' : 'hover:bg-white hover:text-primary'}`}
                         >
-                            {sent ? '¡Petición Enviada!' : <><Send size={28} /> Enviar Mensaje</>}
-                        </button>
+                            {sent ? '¡Petición Enviada!' : 'Enviar Mensaje'}
+                        </Button>
                     </form>
                     <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[150px] -z-0 pointer-events-none group-hover:scale-150 transition-transform duration-1000"></div>
                 </motion.div>

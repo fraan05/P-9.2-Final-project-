@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Car, Shield, Zap } from 'lucide-react';
+import { Car, Shield, Zap, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from '../components/Button';
 
 const Home = () => {
     return (
@@ -30,14 +31,23 @@ const Home = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-8">
                             <Link to="/catalog">
-                                <button className="btn-primary flex items-center justify-center gap-4 w-full sm:w-auto text-xl py-6 px-12 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_40px_-10px_rgba(59,130,246,0.4)]">
-                                    Ver Catálogo <Zap size={22} />
-                                </button>
+                                <Button
+                                    variant="primary"
+                                    size="lg"
+                                    icon={Zap}
+                                    className="w-full sm:w-auto text-xl py-6 px-12"
+                                >
+                                    Ver Catálogo
+                                </Button>
                             </Link>
                             <Link to="/about">
-                                <button className="btn-outline w-full sm:w-auto text-xl py-6 px-12 hover:shadow-xl">
+                                <Button
+                                    variant="outline"
+                                    size="lg"
+                                    className="w-full sm:w-auto text-xl py-6 px-12"
+                                >
                                     Conócenos
-                                </button>
+                                </Button>
                             </Link>
                         </div>
                     </motion.div>
@@ -96,9 +106,15 @@ const Home = () => {
                         <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter leading-[0.9] mb-8">Excelencia en <br /><span className="text-secondary">detalle</span></h2>
                         <p className="text-xl text-primary/60 font-medium italic leading-relaxed">Cada vehículo en nuestra colección pasa por un riguroso proceso de selección para garantizar solo lo mejor.</p>
                     </div>
-                    <Link to="/catalog" className="btn-outline px-10 py-5 group">
-                        Explorar Colección Completa
-                        <span className="inline-block ml-4 group-hover:translate-x-2 transition-transform">→</span>
+                    <Link to="/catalog">
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            icon={ArrowRight}
+                            className="px-10 py-5"
+                        >
+                            Explorar Colección Completa
+                        </Button>
                     </Link>
                 </div>
                 <div className="grid md:grid-cols-3 gap-12">
@@ -131,9 +147,11 @@ const Home = () => {
                             <p className="text-2xl text-white/40 mb-0 font-medium leading-relaxed italic max-w-2xl">Agenda una cita privada y déjanos mostrarte el futuro de tu garaje.</p>
                         </div>
                         <Link to="/contact">
-                            <button className="bg-white text-primary px-16 py-8 rounded-full font-black text-2xl hover:bg-secondary hover:text-white transition-all duration-500 shadow-3xl hover:shadow-secondary/30 transform hover:scale-110 uppercase tracking-widest italic">
+                            <Button
+                                className="bg-white text-primary px-16 py-8 rounded-full font-black text-2xl hover:bg-secondary hover:text-white transition-all duration-500 shadow-3xl transform uppercase tracking-widest italic"
+                            >
                                 Solicitar Cita
-                            </button>
+                            </Button>
                         </Link>
                     </div>
                     <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.15),transparent_50%)] pointer-events-none"></div>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Star, Send, User } from 'lucide-react';
 import type { Car, Review } from '../types';
 import { reviewService } from '../services/api';
+import { Button } from './Button';
 
 
 interface CarModalProps {
@@ -58,12 +59,12 @@ export const CarModal = ({ car, onClose }: CarModalProps) => {
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
                         className="relative bg-white w-full max-w-7xl max-h-full overflow-hidden rounded-[4rem] shadow-[0_100px_150px_-50px_rgba(0,0,0,0.5)] flex flex-col md:flex-row border border-white/20"
                     >
-                        <button
+                        <Button
                             onClick={onClose}
+                            variant="ghost"
+                            icon={X}
                             className="absolute top-8 right-8 z-50 p-4 bg-white/10 hover:bg-white/20 text-white md:text-primary rounded-2xl transition-all duration-300 backdrop-blur-md border border-white/20 hover:scale-110 active:scale-95"
-                        >
-                            <X size={24} />
-                        </button>
+                        />
 
                         <div className="md:w-3/5 p-12 overflow-y-auto custom-scrollbar">
                             <motion.div
@@ -175,12 +176,14 @@ export const CarModal = ({ car, onClose }: CarModalProps) => {
                                         value={newReview.comment}
                                         onChange={e => setNewReview({ ...newReview, comment: e.target.value })}
                                     />
-                                    <button
+                                    <Button
+                                        type="submit"
                                         disabled={submitting}
-                                        className="absolute right-3 bottom-3 bg-secondary text-white p-4 rounded-2xl hover:scale-110 active:scale-95 transition-all shadow-lg shadow-secondary/30 disabled:opacity-50"
-                                    >
-                                        <Send size={20} />
-                                    </button>
+                                        isLoading={submitting}
+                                        variant="secondary"
+                                        icon={Send}
+                                        className="absolute right-3 bottom-3 p-4 rounded-2xl shadow-lg shadow-secondary/30"
+                                    />
                                 </div>
                             </form>
                         </div>
