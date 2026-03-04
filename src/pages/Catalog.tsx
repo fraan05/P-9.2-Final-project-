@@ -15,7 +15,7 @@ const Catalog = () => {
     const [loading, setLoading] = useState(true);
     const [selectedCar, setSelectedCar] = useState<Car | null>(null);
 
-
+    //Llamada a la api
     useEffect(() => {
         carService.getCars().then(data => {
             setCars(data);
@@ -24,6 +24,7 @@ const Catalog = () => {
     }, []);
 
 
+    // dinamic filter
     const filteredCars = cars.filter(car => {
         const matchesSearch = car.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
             car.model.toLowerCase().includes(searchTerm.toLowerCase());
@@ -35,12 +36,14 @@ const Catalog = () => {
     const categories = ['All', 'Sports', 'Luxury', 'Electric', 'SUV', 'Sedan'];
 
 
+    //To ensure search string is visible in an url
     const handleGoogleSearch = (car: Car) => {
         const query = `${car.brand} ${car.model} ${car.year} ofertas`;
         window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
     };
 
 
+    // show spinner while loading data
     if (loading) return (
         <div className="flex justify-center items-center h-[60vh]">
             <motion.div
@@ -56,8 +59,8 @@ const Catalog = () => {
         <div className="flex flex-col gap-16 px-6">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-6xl md:text-7xl font-black italic uppercase tracking-tighter mb-4">Catálogo de <span className="gradient-text">Elite</span></h1>
-                    <p className="text-primary/60 text-xl font-medium">Explora nuestra selección curada de vehículos de alta gama.</p>
+                    <h1 className="text-6xl md:text-7xl font-black italic uppercase tracking-tighter mb-4">Elite <span className="gradient-text">Catalog</span></h1>
+                    <p className="text-primary/60 text-xl font-medium">Explore our curated selection of high-end vehicles.</p>
                 </div>
 
 
@@ -66,7 +69,7 @@ const Catalog = () => {
                         <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-primary/30 group-focus-within:text-secondary transition-colors" size={22} />
                         <input
                             type="text"
-                            placeholder="Buscar marca o modelo..."
+                            placeholder="Search by brand or model..."
                             className="bg-surface border border-border/50 rounded-2xl pl-14 pr-8 py-5 w-full md:w-[400px] focus:outline-none focus:ring-4 focus:ring-secondary/10 focus:border-secondary/30 font-bold text-lg transition-all"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
@@ -81,7 +84,7 @@ const Catalog = () => {
                             onChange={(e) => setSelectedCategory(e.target.value)}
                         >
                             {categories.map(cat => (
-                                <option key={cat} value={cat}>{cat === 'All' ? 'Todas las Categorías' : cat}</option>
+                                <option key={cat} value={cat}>{cat === 'All' ? 'All Categories' : cat}</option>
                             ))}
                         </select>
                         <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-primary/30 font-black">↓</div>
@@ -108,7 +111,7 @@ const Catalog = () => {
                                         variant="primary"
                                         className="rounded-full font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500 shadow-2xl bg-white text-primary hover:bg-white/90"
                                     >
-                                        Ver Detalles
+                                        Explore Details
                                     </Button>
                                 </div>
                                 <img
@@ -160,7 +163,7 @@ const Catalog = () => {
                                         icon={Star}
                                         className="flex-1"
                                     >
-                                        Explorar
+                                        Explore
                                     </Button>
                                     <Button
                                         onClick={() => handleGoogleSearch(car)}
@@ -177,6 +180,7 @@ const Catalog = () => {
             </div>
 
 
+            
             <CarModal car={selectedCar} onClose={() => setSelectedCar(null)} />
 
 
@@ -186,7 +190,7 @@ const Catalog = () => {
                     animate={{ opacity: 1 }}
                     className="text-center py-32 bg-surface rounded-[4rem] border-4 border-dashed border-border/30"
                 >
-                    <p className="text-3xl font-black text-primary/20 italic uppercase tracking-tighter">Sin resultados para esta búsqueda</p>
+                    <p className="text-3xl font-black text-primary/20 italic uppercase tracking-tighter">No results for this search</p>
                 </motion.div>
             )}
         </div>

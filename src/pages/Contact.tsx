@@ -16,11 +16,11 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-6 py-20 min-h-screen">
             <div className="text-center mb-24">
                 <div className="inline-block bg-secondary/10 text-secondary px-6 py-2.5 rounded-full text-sm font-black uppercase tracking-widest mb-10 italic">
-                    Estamos a tu disposición
+                    We are at your disposal
                 </div>
-                <h1 className="text-7xl md:text-9xl font-black mb-10 italic uppercase tracking-tighter leading-none">Ponte en <br /><span className="gradient-text">Contacto</span></h1>
+                <h1 className="text-7xl md:text-9xl font-black mb-10 italic uppercase tracking-tighter leading-none">Get in <br /><span className="gradient-text">Touch</span></h1>
                 <p className="text-2xl text-primary/70 max-w-3xl mx-auto font-medium leading-relaxed italic">
-                    Nuestro equipo exclusivo te asesorará para encontrar la pieza de ingeniería que transformará tu vida.
+                    Our exclusive team will advise you to find the engineering piece that will transform your life.
                 </p>
             </div>
 
@@ -33,14 +33,14 @@ const Contact = () => {
                     className="lg:col-span-2 flex flex-col gap-12"
                 >
                     <div className="bg-surface/50 p-12 rounded-[4rem] border border-border/40 flex flex-col gap-12">
-                        <h2 className="text-5xl font-black italic uppercase tracking-tighter mb-4">Sede <span className="text-secondary">Central</span></h2>
+                        <h2 className="text-5xl font-black italic uppercase tracking-tighter mb-4">Central <span className="text-secondary">Headquarters</span></h2>
 
                         <div className="flex items-center gap-8 group">
                             <div className="bg-white p-6 rounded-3xl text-secondary shadow-xl border border-border/30 group-hover:scale-110 transition-transform duration-500">
                                 <MapPin size={32} />
                             </div>
                             <div>
-                                <p className="font-black italic uppercase tracking-widest text-xs text-secondary/50 mb-1">Nuestra Ubicación</p>
+                                <p className="font-black italic uppercase tracking-widest text-xs text-secondary/50 mb-1">Our Location</p>
                                 <p className="text-2xl font-black italic uppercase tracking-tight">Avenida del Lujo 123, Madrid</p>
                             </div>
                         </div>
@@ -50,7 +50,7 @@ const Contact = () => {
                                 <Phone size={32} />
                             </div>
                             <div>
-                                <p className="font-black italic uppercase tracking-widest text-xs text-secondary/50 mb-1">Teléfono Directo</p>
+                                <p className="font-black italic uppercase tracking-widest text-xs text-secondary/50 mb-1">Direct Phone</p>
                                 <p className="text-2xl font-black italic uppercase tracking-tight">+34 900 123 456</p>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ const Contact = () => {
                                 <Mail size={32} />
                             </div>
                             <div>
-                                <p className="font-black italic uppercase tracking-widest text-xs text-secondary/50 mb-1">Email Exclusivo</p>
+                                <p className="font-black italic uppercase tracking-widest text-xs text-secondary/50 mb-1">Exclusive Email</p>
                                 <p className="text-2xl font-black italic uppercase tracking-tight">elite@luxedrive.com</p>
                             </div>
                         </div>
@@ -79,7 +79,7 @@ const Contact = () => {
                                 icon={ExternalLink}
                                 className="bg-white text-primary hover:bg-white/90 shadow-2xl italic group-hover:scale-110 transition-transform"
                             >
-                                Ver en Mapas Interactivos
+                                View on Interactive Maps
                             </Button>
                         </div>
                     </div>
@@ -95,15 +95,15 @@ const Contact = () => {
                     <form onSubmit={handleSubmit} className="relative z-10 flex flex-col gap-12">
                         <div className="grid md:grid-cols-2 gap-12">
                             <div className="flex flex-col gap-5">
-                                <label className="text-white/30 font-black italic uppercase tracking-widest text-xs ml-6">Identidad</label>
+                                <label className="text-white/30 font-black italic uppercase tracking-widest text-xs ml-6">Identity</label>
                                 <input
                                     required
                                     className="bg-white/5 border border-white/10 rounded-[2rem] p-7 focus:ring-4 focus:ring-secondary/20 focus:border-secondary/40 outline-none placeholder:text-white/10 font-black italic text-white transition-all text-xl"
-                                    placeholder="Tu Nombre..."
+                                    placeholder="Your Name..."
                                 />
                             </div>
                             <div className="flex flex-col gap-5">
-                                <label className="text-white/30 font-black italic uppercase tracking-widest text-xs ml-6">Comunicación</label>
+                                <label className="text-white/30 font-black italic uppercase tracking-widest text-xs ml-6">Communication</label>
                                 <input
                                     required
                                     type="email"
@@ -113,12 +113,12 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className="flex flex-col gap-5">
-                            <label className="text-white/30 font-black italic uppercase tracking-widest text-xs ml-6">Tu Mensaje</label>
+                            <label className="text-white/30 font-black italic uppercase tracking-widest text-xs ml-6">Your Message</label>
                             <textarea
                                 required
                                 rows={5}
                                 className="bg-white/5 border border-white/10 rounded-[2rem] p-7 focus:ring-4 focus:ring-secondary/20 focus:border-secondary/40 outline-none placeholder:text-white/10 font-medium italic text-white transition-all resize-none text-xl"
-                                placeholder="Comparte tus deseos con nosotros..."
+                                placeholder="Share your wishes with us..."
                             />
                         </div>
                         <Button

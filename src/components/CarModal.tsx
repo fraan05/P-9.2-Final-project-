@@ -18,6 +18,7 @@ export const CarModal = ({ car, onClose }: CarModalProps) => {
     const [submitting, setSubmitting] = useState(false);
 
 
+    // load reviews whenever a new car is shown
     useEffect(() => {
         if (car) {
             reviewService.getReviewsByCarId(car.id).then(setReviews);
@@ -25,6 +26,7 @@ export const CarModal = ({ car, onClose }: CarModalProps) => {
     }, [car]);
 
 
+    // send new review to service and update local state
     const handleSubmitReview = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!car) return;

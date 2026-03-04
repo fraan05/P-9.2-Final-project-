@@ -38,6 +38,7 @@ export const Button = ({
         lg: "px-10 py-5 text-sm rounded-3xl",
     };
 
+    // animated button with configurable style and states
     return (
         <motion.button
             whileHover={{ scale: 1.02 }}

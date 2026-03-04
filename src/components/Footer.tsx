@@ -15,20 +15,20 @@ export const Footer = () => {
                         </span>
                     </Link>
                     <p className="text-white/60 max-w-sm mb-8 mx-auto md:mx-0">
-                        Redefiniendo el estándar del lujo automotriz. Excelencia, potencia y diseño en cada kilómetro.
+                        Redefining the standard of automotive luxury. Excellence, power, and design in every kilometer.
                     </p>
                 </div>
                 <div>
-                    <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Navegación</h4>
+                    <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Navigation</h4>
                     <ul className="space-y-4 text-white/50 font-medium">
-                        <li><Link to="/" className="hover:text-secondary transition-colors">Inicio</Link></li>
-                        <li><Link to="/catalog" className="hover:text-secondary transition-colors">Catálogo</Link></li>
-                        <li><Link to="/about" className="hover:text-secondary transition-colors">Sobre Mí</Link></li>
-                        <li><Link to="/contact" className="hover:text-secondary transition-colors">Contacto</Link></li>
+                        <li><Link to="/" className="hover:text-secondary transition-colors">Home</Link></li>
+                        <li><Link to="/catalog" className="hover:text-secondary transition-colors">Catalog</Link></li>
+                        <li><Link to="/about" className="hover:text-secondary transition-colors">About Us</Link></li>
+                        <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Contacto</h4>
+                    <h4 className="font-bold text-lg mb-6 uppercase tracking-wider">Contact</h4>
                     <ul className="space-y-4 text-white/50 font-medium">
                         <li>info@luxedrive.com</li>
                         <li>+34 900 123 456</li>
@@ -37,7 +37,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="max-w-7xl mx-auto border-t border-white/10 mt-20 pt-10 text-center text-white/30 text-sm font-medium uppercase tracking-widest">
-                <p>© 2024 LuxeDrive. Excelencia en movimiento.</p>
+                <p>© 2024 LuxeDrive. Excellence.</p>
             </div>
         </footer>
     );

@@ -1,6 +1,7 @@
 import type { Car, Review } from '../types';
 
 
+// mock data used by the fake API
 const MOCK_CARS: Car[] = [
     {
         id: '1',
@@ -115,6 +116,7 @@ const MOCK_CARS: Car[] = [
 ];
 
 
+// simple service mimicking REST calls for cars
 export const carService = {
     getCars: async (): Promise<Car[]> => {
         return new Promise((resolve) => {
@@ -132,6 +134,7 @@ export const carService = {
 const reviews: Review[] = [];
 
 
+// in-memory review storage and operations
 export const reviewService = {
     getReviewsByCarId: async (carId: string): Promise<Review[]> => {
         return reviews.filter(r => r.carId === carId);

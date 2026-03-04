@@ -21,13 +21,13 @@ const Home = () => {
                             className="inline-flex items-center gap-3 bg-secondary/10 text-secondary px-6 py-2.5 rounded-full text-sm font-black tracking-widest uppercase mb-10 italic"
                         >
                             <span className="w-2.5 h-2.5 bg-secondary rounded-full animate-pulse"></span>
-                            Catálogo Premium 2024
+                            Premium Catalog 2024
                         </motion.div>
                         <h1 className="text-7xl md:text-[10rem] font-black leading-[0.85] tracking-tighter mb-10 italic uppercase">
-                            Redefiniendo el <br /><span className="gradient-text">Lujo</span>
+                            Redefining the <br /><span className="gradient-text">Luxury</span>
                         </h1>
                         <p className="text-2xl text-primary/70 mb-14 max-w-xl font-medium leading-relaxed italic">
-                            Mucho más que una conducción. Es una declaración de principios. Una oda a la ingeniería y la elegancia sin límites.
+                            Much more than just driving. It's a statement of principles. A tribute to engineering and elegance without limits.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-8">
                             <Link to="/catalog">
@@ -37,7 +37,7 @@ const Home = () => {
                                     icon={Zap}
                                     className="w-full sm:w-auto text-xl py-6 px-12"
                                 >
-                                    Ver Catálogo
+                                    View Catalog
                                 </Button>
                             </Link>
                             <Link to="/about">
@@ -46,7 +46,7 @@ const Home = () => {
                                     size="lg"
                                     className="w-full sm:w-auto text-xl py-6 px-12"
                                 >
-                                    Conócenos
+                                    Get to Know Us
                                 </Button>
                             </Link>
                         </div>
@@ -71,7 +71,7 @@ const Home = () => {
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                                 className="absolute -bottom-10 -left-10 bg-white/95 backdrop-blur-xl p-8 rounded-[3rem] shadow-2xl border border-white/40 hidden xl:block"
                             >
-                                <p className="text-secondary font-black italic uppercase tracking-widest text-xs mb-2">Puntuación Elite</p>
+                                <p className="text-secondary font-black italic uppercase tracking-widest text-xs mb-2">Elite Rating</p>
                                 <div className="flex items-center gap-4">
                                     <span className="text-4xl font-black italic">4.9</span>
                                     <div className="flex text-accent gap-1">
@@ -103,8 +103,8 @@ const Home = () => {
             <section className="max-w-7xl mx-auto px-6 w-full">
                 <div className="flex flex-col md:flex-row justify-between items-end gap-10 mb-24">
                     <div className="max-w-xl">
-                        <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter leading-[0.9] mb-8">Excelencia en <br /><span className="text-secondary">detalle</span></h2>
-                        <p className="text-xl text-primary/60 font-medium italic leading-relaxed">Cada vehículo en nuestra colección pasa por un riguroso proceso de selección para garantizar solo lo mejor.</p>
+                        <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter leading-[0.9] mb-8">Excelence in <br /><span className="text-secondary">Detail</span></h2>
+                        <p className="text-xl text-primary/60 font-medium italic leading-relaxed">Each vehicle in our collection goes through a rigorous selection process to ensure only the best.</p>
                     </div>
                     <Link to="/catalog">
                         <Button
@@ -113,7 +113,7 @@ const Home = () => {
                             icon={ArrowRight}
                             className="px-10 py-5"
                         >
-                            Explorar Colección Completa
+                            View Full Collection
                         </Button>
                     </Link>
                 </div>
@@ -143,14 +143,14 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto bg-primary text-white p-14 md:p-32 rounded-[5rem] relative overflow-hidden group border border-white/5">
                     <div className="relative z-10 flex flex-col lg:flex-row justify-between items-center gap-20">
                         <div className="max-w-3xl text-center lg:text-left">
-                            <h2 className="text-6xl md:text-[6.5rem] font-black uppercase italic tracking-tighter mb-10 leading-[0.85]">Tu próxima <br /> <span className="text-secondary">leyenda</span> comienza aquí</h2>
-                            <p className="text-2xl text-white/40 mb-0 font-medium leading-relaxed italic max-w-2xl">Agenda una cita privada y déjanos mostrarte el futuro de tu garaje.</p>
+                            <h2 className="text-6xl md:text-[6.5rem] font-black uppercase italic tracking-tighter mb-10 leading-[0.85]">Your next <br /> <span className="text-secondary">legend</span> starts here</h2>
+                            <p className="text-2xl text-white/40 mb-0 font-medium leading-relaxed italic max-w-2xl">Schedule a private appointment and let us show you the future of your garage.</p>
                         </div>
                         <Link to="/contact">
                             <Button
                                 className="bg-white text-primary px-16 py-8 rounded-full font-black text-2xl hover:bg-secondary hover:text-white transition-all duration-500 shadow-3xl transform uppercase tracking-widest italic"
                             >
-                                Solicitar Cita
+                                Schedule Appointment
                             </Button>
                         </Link>
                     </div>

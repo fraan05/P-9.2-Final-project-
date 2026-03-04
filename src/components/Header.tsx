@@ -8,10 +8,10 @@ export const Header = () => {
     const location = useLocation();
 
     const navLinks = [
-        { path: '/', label: 'Inicio', icon: <HomeIcon size={18} /> },
-        { path: '/catalog', label: 'Catálogo', icon: <Car size={18} /> },
-        { path: '/about', label: 'Sobre Mí', icon: <Info size={18} /> },
-        { path: '/contact', label: 'Contacto', icon: <Mail size={18} /> },
+        { path: '/', label: 'Home', icon: <HomeIcon size={18} /> },
+        { path: '/catalog', label: 'Catalog', icon: <Car size={18} /> },
+        { path: '/about', label: 'About', icon: <Info size={18} /> },
+        { path: '/contact', label: 'Contact', icon: <Mail size={18} /> },
     ];
 
     return (

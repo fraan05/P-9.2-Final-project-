@@ -12,10 +12,10 @@ const About = () => {
                 className="text-center mb-24"
             >
                 <div className="inline-block bg-secondary/10 text-secondary px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-8 italic">
-                    Nuestra Visión
+                    Our Vision
                 </div>
-                <h1 className="text-7xl md:text-9xl font-black mb-8 italic uppercase tracking-tighter leading-none">Sobre <span className="gradient-text">LuxeDrive</span></h1>
-                <p className="text-2xl text-primary/60 max-w-3xl mx-auto font-medium leading-relaxed italic">Apasionados por la excelencia automotriz y el diseño vanguardista que redefine los límites de lo posible.</p>
+                <h1 className="text-7xl md:text-9xl font-black mb-8 italic uppercase tracking-tighter leading-none">About <span className="gradient-text">LuxeDrive</span></h1>
+                <p className="text-2xl text-primary/60 max-w-3xl mx-auto font-medium leading-relaxed italic">Passionate about automotive excellence and cutting-edge design that redefines the limits of what is possible.</p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-24 items-center mb-32">
@@ -39,9 +39,9 @@ const About = () => {
                     transition={{ duration: 1, delay: 0.4 }}
                     className="flex flex-col gap-10"
                 >
-                    <h2 className="text-5xl md:text-6xl font-black italic uppercase tracking-tighter leading-none">Liderando con <span className="text-secondary">Visión</span></h2>
+                    <h2 className="text-5xl md:text-6xl font-black italic uppercase tracking-tighter leading-none">Leading with <span className="text-secondary">Vision</span></h2>
                     <p className="text-xl text-primary/60 font-medium leading-relaxed italic">
-                        Con más de una década en la industria del automóvil de lujo, nuestra misión es conectar a los entusiastas más exigentes con los vehículos de sus sueños, garantizando una experiencia de compra tan premium como los mismos coches que representamos.
+                        With over a decade in the luxury car industry, our mission is to connect the most discerning enthusiasts with their dream vehicles, guaranteeing a buying experience as premium as the cars we represent.
                     </p>
                     <div className="grid grid-cols-1 gap-6 mt-4">
                         {[
